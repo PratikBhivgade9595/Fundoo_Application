@@ -1,0 +1,102 @@
+<div class="container">
+    <div class="left-side">
+        <div class="fundoo">
+            <span class="textsty" style="color:#4169e1">F</span>
+            <span class="textsty" style="color:#b22222">u</span>
+            <span class="textsty" style="color: #ff8c00">n</span>
+            <span class="textsty" style="color:#4169e1">d</span>
+            <span class="textsty" style="color: green">o</span>
+            <span class="textsty" style="color: #b22222">o</span>
+        </div>
+        <div class="create-text">
+            <p>Create your Google Account</p>
+        </div>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="label-1">
+                <div class="label-2">
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>First Name</mat-label>
+                            <!-- <input matInput placeholder="Placeholder"> -->
+                            <input matInput placeholder="" formControlName="firstName" />
+                            <mat-error>first name is required</mat-error>
+                        </mat-form-field>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Last Name</mat-label>
+                            <!-- <input matInput placeholder="Placeholder"> -->
+                            <input matInput placeholder="" formControlName="lastName" />
+                            <mat-error>last name is required</mat-error>
+                        </mat-form-field>
+                    </p>
+                </div>
+            </div>
+            <div class="label-3">
+                <p style="margin-top: -20px;">
+                    <mat-form-field appearance="outline" class="username">
+                        <mat-label class="username">Username</mat-label>
+                        <!-- <input matInput placeholder="Placeholder"> -->
+                        <input matInput placeholder="" formControlName="email" />
+                            <mat-error>email id is required</mat-error>
+                    </mat-form-field>
+                </p>
+            </div>
+            <div style="margin-top: -20px;">
+                <p>You can use letters, numbers and periods</p>
+            </div>
+            <div>
+                <p style="color: #1A73E8;"><b>Use my current email address instead</b></p>
+            </div>
+            <div class="pass">
+                <div>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Password</mat-label>
+                            <!-- <input matInput placeholder="Placeholder"> -->
+                            <input matInput placeholder="" formControlName="password" />
+                            <mat-error>password is required</mat-error>
+                        </mat-form-field>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Confirm</mat-label>
+                            <!-- <input matInput placeholder="Placeholder"> -->
+                            <input matInput placeholder="" formControlName="confirmPassword" />
+                            <mat-error>confirm password is required</mat-error>
+                        </mat-form-field>
+                    </p>
+                </div>
+            </div>
+            <div>
+                <p style="margin-top: -30px; font-size: 15px; padding: 10px;">Use 8 or more characters with a mix of
+                    letters, numbers & <br> symbols</p>
+            </div>
+            <div class="checkbox-container">
+                <div>
+                    <mat-checkbox>Show password</mat-checkbox>
+                </div>
+            </div>
+            <div class="nextbutton-container">
+                <div>
+                    <p style="color: #1A73E8;"><b>Sign in instead</b></p>
+                </div>
+                <div>
+                    <button mat-raised-button Next class="btn"><b>Next</b></button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="img-right-side">
+        <div class="img">
+            <img src="../../../assets/registration/account (1).svg">
+        </div>
+        <div>
+            <p style="font-size: 20px; padding: 10px;">One account. All of Google working for you.</p>
+        </div>
+    </div>
+</div>
