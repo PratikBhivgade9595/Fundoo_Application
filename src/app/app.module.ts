@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
@@ -11,6 +12,8 @@ import { RegistrationComponent } from './component/registration/registration.com
 import { LoginComponent } from './component/login/login.component';
 import { ForgetEmailComponent } from './component/forget-email/forget-email.component';
 import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { ResetPasswordComponent } from './component/reset-password/reset-passwor
     MatInputModule,
     MatCheckboxModule,
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FlexLayoutModule,
+    HttpClientModule,
+    BrowserAnimationsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

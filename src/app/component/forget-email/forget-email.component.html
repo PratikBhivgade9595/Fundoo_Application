@@ -10,15 +10,19 @@
     <div class="text">
         <p>Find your Email</p>
     </div>
-    <div class="label">
-        <p>
-            <mat-form-field appearance="outline" style="width: 400px">
-                <mat-label>Email</mat-label>
-                <input matInput placeholder="Placeholder">
-            </mat-form-field>
-        </p>
-    </div> 
-    <div class="button">
-        <button mat-raised-button Next class="btn"><b>Next</b></button>
-    </div>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="label">
+            <p>
+                <mat-form-field appearance="outline" style="width: 400px">
+                    <mat-label>Email</mat-label>
+                    <!-- <input matInput placeholder="Placeholder"> -->
+                    <input matInput placeholder="Placeholder" formControlName="email" />
+                    <mat-error>email id is required</mat-error>
+                </mat-form-field>
+            </p>
+        </div>
+        <div class="button">
+            <button mat-raised-button Next class="btn"><b>Next</b></button>
+        </div>
+    </form>
 </div>
