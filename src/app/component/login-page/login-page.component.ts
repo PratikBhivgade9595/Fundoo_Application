@@ -3,24 +3,24 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/userService/user.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  selector: 'app-login-page',
+  templateUrl: './login-page.component.html',
+  styleUrls: ['./login-page.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginPageComponent implements OnInit {
   loginForm!: FormGroup;
   submitted = false;
 
   constructor(private formBuilder: FormBuilder, private user: UserService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       service: "advance"
     });
   }
-  get f() { return this.loginForm.controls;}
+  get f() { return this.loginForm.controls; }
 
   onSubmit() {
     this.submitted = true;
@@ -39,5 +39,6 @@ export class LoginComponent implements OnInit {
     }
 
   }
-
 }
+
+

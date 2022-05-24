@@ -9,19 +9,22 @@ import {MatButtonModule} from '@angular/material/button';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegistrationComponent } from './component/registration/registration.component';
-import { LoginComponent } from './component/login/login.component';
+import {MatMenuModule} from '@angular/material/menu';
 import { ForgetEmailComponent } from './component/forget-email/forget-email.component';
 import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginPageComponent } from './component/login-page/login-page.component';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrationComponent,
-    LoginComponent,
     ForgetEmailComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    LoginPageComponent,
+    DashboardComponent 
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ReactiveFormsModule,
     FlexLayoutModule,
     HttpClientModule,
-    BrowserAnimationsModule 
+    BrowserAnimationsModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

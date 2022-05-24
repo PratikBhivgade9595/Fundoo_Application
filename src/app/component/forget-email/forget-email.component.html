@@ -10,7 +10,7 @@
     <div class="text">
         <p>Find your Email</p>
     </div>
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
         <div class="label">
             <p>
                 <mat-form-field appearance="outline" style="width: 400px">
@@ -22,7 +22,7 @@
             </p>
         </div>
         <div class="button">
-            <button mat-raised-button Next class="btn"><b>Next</b></button>
+            <button mat-raised-button Next class="btn" (click)="onSubmit()"><b>Next</b></button>
         </div>
     </form>
 </div>

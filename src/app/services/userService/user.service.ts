@@ -36,4 +36,14 @@ login(reqdata: any) {
   return this.httpService.postService('/user/login', reqdata, false, header)
 }
 
+forgotemail(reqdata: any) {
+  console.log(reqdata);
+  
+  let header = {
+    headers: new HttpHeaders({
+      'Content-type': 'application/json',
+    })
+  }
+  return this.httpService.postService('/user/reset', reqdata, false, header)
+}
 }
