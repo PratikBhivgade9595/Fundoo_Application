@@ -12,4 +12,9 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  isValid:boolean = false;
+
+  expand() {
+    this.isValid = true;
+  }
 }

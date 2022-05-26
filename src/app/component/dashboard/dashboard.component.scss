@@ -1,4 +1,38 @@
 .header {
     display: flex;
     border: 1px solid black;
+    gap: 110px;
+    opacity: 0.8;
+    
 }
+
+.menu-button {
+    margin-left: 10px;
+    background-color: white;
+    border: white;
+}
+
+.fundoo {
+    font-size: x-large;
+}
+
+.header-content {
+    gap: 30px;
+    height: 40px;
+    padding: 5px;
+}
+
+.header-content1 {
+    gap: 30px;
+}
+
+.header-content2 {
+    gap: 30px;
+}
+
+.search {
+    width: 500px;
+    height: 30px;
+    
+}
+
