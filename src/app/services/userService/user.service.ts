@@ -46,4 +46,19 @@ forgotemail(reqdata: any) {
   }
   return this.httpService.postService('/user/reset', reqdata, false, header)
 }
+
+noteData(reqdata: any) { 
+  console.log(reqdata);
+
+  
+  let header = {
+    headers:new HttpHeaders({
+      'Content-type':'application/json',
+      //'Authorization':'token'
+     })
+  }
+
+  return this.httpService.postService('/notes/addNotes', reqdata, false, header)
+}
+
 }

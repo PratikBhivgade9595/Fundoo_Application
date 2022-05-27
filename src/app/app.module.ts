@@ -20,6 +20,8 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
+import { NoteComponent } from './component/note/note.component';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import {MatListModule} from '@angular/material/list';
     ForgetEmailComponent,
     ResetPasswordComponent,
     LoginPageComponent,
-    DashboardComponent 
+    DashboardComponent,
+    NoteComponent 
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import {MatListModule} from '@angular/material/list';
     MatSidenavModule,
     MatIconModule,
     MatToolbarModule,
-    MatListModule
+    MatListModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

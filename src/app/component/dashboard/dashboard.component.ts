@@ -14,7 +14,23 @@ export class DashboardComponent implements OnInit {
 
   isValid:boolean = false;
 
-  expand() {
+  expand1() {
+    this.isValid = true;
+  }
+
+  expand2() {
+    this.isValid = true;
+  }
+
+  expand3() {
+    this.isValid = true;
+  }
+
+  expand4() {
+    this.isValid = true;
+  }
+
+  expand5() {
     this.isValid = true;
   }
 }

@@ -1,0 +1,25 @@
+<!-- <p>note works!</p> -->
+<div fxLayoutAlign="center" class="main">
+    <div *ngIf="visible" (click)="press()" class="div-part">
+        <mat-card fxLayout="row" class="mat-content">
+            <input type="text" class="note-input" placeholder="Take a note...">
+            <span *ngIf="visible" fxLayout="row" style="gap: 40px;">
+                <img src="../../../assets\note\check_box_FILL0_wght400_GRAD0_opsz48.svg" style="height: 30px;">
+                <img src="../../../assets\note\brush_FILL0_wght400_GRAD0_opsz48.svg" style="height: 30px;"> 
+                <img src="../../../assets\note\image_FILL0_wght400_GRAD0_opsz48.svg" style="height: 30px;">
+            </span>
+        </mat-card>
+    </div>
+
+    <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
+        <div class="div-part1">
+            <mat-card *ngIf="!visible">
+                <input type="text" class="note-input" placeholder="Title" formControlName="title">
+                <input style="margin-top: 20px; font-size:15px;" class="note-input" placeholder="Take a note..." formControlName="description">
+                <div class="button">
+                    <button mat-button  (click)="onSubmit()">close</button>
+                </div>
+            </mat-card>
+        </div>
+    </form>
+</div>
