@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { throwMatDuplicatedDrawerError } from '@angular/material/sidenav';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserService } from 'src/app/services/userService/user.service';
-
+import { NoteService } from 'src/app/services/noteService/note.service';
 
 @Component({
   selector: 'app-note',
@@ -13,7 +12,7 @@ export class NoteComponent implements OnInit {
 noteForm!: FormGroup;
 submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private user: UserService) { }
+  constructor(private formBuilder: FormBuilder, private note: NoteService) { }
 
   ngOnInit() {
     this.noteForm = this.formBuilder.group({
@@ -36,15 +35,23 @@ submitted = false;
         description: this.noteForm.value.description
         // service: this.noteForm.value.service
      }  
-      this.user.noteData(reqdata).subscribe((response: any) => {
+      this.note.noteData(reqdata).subscribe((response: any) => {
         console.log(response);
       }); 
     }
 
   }
+
   visible:boolean = true;
 
   press() {
     this.visible = false;
   }
+
+  close() {
+    this.visible = true;
+    
+  }
+
+  
 }

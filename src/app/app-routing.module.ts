@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AllNotesComponent } from './component/all-notes/all-notes.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { ForgetEmailComponent } from './component/forget-email/forget-email.component';
 import { LoginPageComponent } from './component/login-page/login-page.component';
@@ -12,7 +13,13 @@ const routes: Routes = [
   {path:'login', component: LoginPageComponent},
   {path:'email', component: ForgetEmailComponent},
   {path:'password', component: ResetPasswordComponent},
-  {path:'dashboard', component: DashboardComponent},
+  {path:'dashboard', component: DashboardComponent,
+  // children: [
+  //   {path:'', redirectTo:"/dashboard/allnotes"},
+  //   {path:'allnotes', component: AllNotesComponent}
+  // ]
+  },
+
   {path:'note', component: NoteComponent}
 ];
 

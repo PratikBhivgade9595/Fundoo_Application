@@ -12,14 +12,16 @@
     </div>
 
     <form [formGroup]="noteForm" (ngSubmit)="onSubmit()">
-        <div class="div-part1">
-            <mat-card *ngIf="!visible">
+        <div class="div-part1" *ngIf="!visible">
+            <mat-card class="mat-card">
                 <input type="text" class="note-input" placeholder="Title" formControlName="title">
-                <input style="margin-top: 20px; font-size:15px;" class="note-input" placeholder="Take a note..." formControlName="description">
+                <input style="margin-top: 20px; font-size:15px; overflow: hidden;" class="note-input" placeholder="Take a note..." formControlName="description">
                 <div class="button">
-                    <button mat-button  (click)="onSubmit()">close</button>
+                    <button mat-button (click)="onSubmit()">close</button>
                 </div>
             </mat-card>
         </div>
     </form>
 </div>
+
+<!-- (click)="close()" -->
