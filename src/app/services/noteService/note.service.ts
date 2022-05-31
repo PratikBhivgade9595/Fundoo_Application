@@ -25,4 +25,17 @@ export class NoteService {
     return this.httpService.postService('/notes/addNotes', reqdata, true, header)
   }
   
+  getNoteData() { 
+    console.log("api call");
+  
+    
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'Authorization': this.token
+       })
+    }
+  
+    return this.httpService.getService('/notes/getNotesList', true, header)
+  }
 }

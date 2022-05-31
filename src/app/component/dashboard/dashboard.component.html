@@ -1,8 +1,6 @@
 <div class="header">
     <div fxLayoutAlign="space-around center" class="header-content">
-       <!-- <mat-toolbar style="height: 20px;"> -->
         <button  class="menu-button" (click)="sidenav.toggle();">
-            <!-- <mat-icon>menu</mat-icon> -->
             <img src="../../../assets\dashboard\menu_FILL0_wght400_GRAD0_opsz48.png" title="Main menu" style="height: 30px; opacity: 1;">
         </button>
        <!-- </mat-toolbar> -->
@@ -50,7 +48,7 @@
                 <button mat-icon-button (click)="expand1();">
                     <img src="../../../assets/dashboard\lightbulb_FILL0_wght400_GRAD0_opsz48.svg" style="height: 30px;">
                 </button>
-                <a mat-list-item *ngIf="isValid">Notes</a>
+                <a mat-list-item *ngIf="isValid" >Notes</a>
             </div>
             <div fxLayoutAlign="start center" fxLayout="row" fxLayoutGap="20px" mat-list-item>
                 <button mat-icon-button (click)="expand2();">
@@ -79,8 +77,9 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <div style="height: 88vh;" ></div>
+        <div style="height: 88vh;" ><router-outlet></router-outlet></div>
     </mat-sidenav-content>
 </mat-sidenav-container>
+
 
 <!-- <app-note></app-note> -->

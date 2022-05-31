@@ -1,4 +1,5 @@
 <!-- <p>note works!</p> -->
+<!-- <app-note-display></app-note-display> -->
 <div fxLayoutAlign="center" class="main">
     <div *ngIf="visible" (click)="press()" class="div-part">
         <mat-card fxLayout="row" class="mat-content">
@@ -16,12 +17,14 @@
             <mat-card class="mat-card">
                 <input type="text" class="note-input" placeholder="Title" formControlName="title">
                 <input style="margin-top: 20px; font-size:15px; overflow: hidden;" class="note-input" placeholder="Take a note..." formControlName="description">
+                <app-icons></app-icons>
                 <div class="button">
-                    <button mat-button (click)="onSubmit()">close</button>
+                    <button mat-button  (click)="close()">close</button>
                 </div>
             </mat-card>
         </div>
     </form>
 </div>
 
-<!-- (click)="close()" -->
+<!-- (click)="close()" --> 
+<!-- (click)="onSubmit()" -->

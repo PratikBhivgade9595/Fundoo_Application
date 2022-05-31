@@ -50,6 +50,7 @@ submitted = false;
 
   close() {
     this.visible = true;
+    this.onSubmit() 
     
   }
 

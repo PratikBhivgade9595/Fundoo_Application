@@ -7,6 +7,7 @@ import { LoginPageComponent } from './component/login-page/login-page.component'
 import { NoteComponent } from './component/note/note.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
+import { NoteDisplayComponent } from './component/note-display/note-display.component';
 
 const routes: Routes = [
   {path:'register', component: RegistrationComponent},
@@ -14,13 +15,11 @@ const routes: Routes = [
   {path:'email', component: ForgetEmailComponent},
   {path:'password', component: ResetPasswordComponent},
   {path:'dashboard', component: DashboardComponent,
-  // children: [
-  //   {path:'', redirectTo:"/dashboard/allnotes"},
-  //   {path:'allnotes', component: AllNotesComponent}
-  // ]
+   children: [
+     {path:'', redirectTo:"dashboard/allnotes", pathMatch: 'full'},
+     {path:"allnotes", component: AllNotesComponent}
+   ]
   },
-
-  {path:'note', component: NoteComponent}
 ];
 
 @NgModule({
