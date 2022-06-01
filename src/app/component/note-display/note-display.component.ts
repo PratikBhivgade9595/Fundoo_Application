@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-note-display',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./note-display.component.scss']
 })
 export class NoteDisplayComponent implements OnInit {
-
+  
   constructor() { }
 
+  @Input() NoteArray: any;
+
   ngOnInit(): void {
+    console.log(this.NoteArray);
   }
 
 }

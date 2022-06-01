@@ -15,7 +15,10 @@
     <button mat-icon-button>
         <img class="icon-img" src="../../../assets/dashboard/archive_FILL0_wght400_GRAD0_opsz48.svg" title="Archive">
     </button>
-    <button mat-icon-button>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
         <img class="icon-img" src="../../../assets/icons/more_vert_FILL0_wght400_GRAD0_opsz48.svg" title="More">
+        <mat-menu #menu="matMenu">
+			<button mat-menu-item (click)="noteDelete()">Delete note</button>
+		</mat-menu>
     </button>
 </div>

@@ -2,24 +2,23 @@ import { Component, OnInit } from '@angular/core';
 import { NoteService } from 'src/app/services/noteService/note.service';
 
 @Component({
-  selector: 'app-all-notes',
-  templateUrl: './all-notes.component.html',
-  styleUrls: ['./all-notes.component.scss']
+  selector: 'app-all-trash-notes',
+  templateUrl: './all-trash-notes.component.html',
+  styleUrls: ['./all-trash-notes.component.scss']
 })
-export class AllNotesComponent implements OnInit {
+export class AllTrashNotesComponent implements OnInit {
   notesArray: any;
 
   constructor(private note: NoteService) { }
 
   ngOnInit(): void {
-    this.getAllNote();
+    this.getAllTrashNote();
   }
 
-  getAllNote() {
+  getAllTrashNote() {
     this.note.getNoteData().subscribe((response: any) => { 
       console.log(response);
       this.notesArray = response.data.data
   });
 }
-
 }

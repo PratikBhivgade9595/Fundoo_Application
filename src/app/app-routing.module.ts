@@ -8,6 +8,8 @@ import { NoteComponent } from './component/note/note.component';
 import { RegistrationComponent } from './component/registration/registration.component';
 import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
 import { NoteDisplayComponent } from './component/note-display/note-display.component';
+import { AllTrashNotesComponent } from './component/all-trash-notes/all-trash-notes.component';
+import { AllArchiveComponent } from './component/all-archive/all-archive.component';
 
 const routes: Routes = [
   {path:'register', component: RegistrationComponent},
@@ -17,7 +19,9 @@ const routes: Routes = [
   {path:'dashboard', component: DashboardComponent,
    children: [
      {path:'', redirectTo:"dashboard/allnotes", pathMatch: 'full'},
-     {path:"allnotes", component: AllNotesComponent}
+     {path:"allnotes", component: AllNotesComponent},
+     {path:"trash", component: AllTrashNotesComponent},
+     {path:"archive", component: AllArchiveComponent}
    ]
   },
 ];

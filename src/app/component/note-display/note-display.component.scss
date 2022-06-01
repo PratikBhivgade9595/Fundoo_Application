@@ -19,6 +19,8 @@
     width: 100%;
     gap: 10px;
     border-radius: 2px;
-    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
      

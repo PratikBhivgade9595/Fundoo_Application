@@ -1,8 +1,9 @@
 <!-- <p>note-display works!</p> -->
-<div fxLayoutAlign="center" class="div-part1">
+<div *ngFor="let note of NoteArray" fxLayoutAlign="center" class="div-part1">
     <mat-card class="mat-card" fxLayout="column">
-        <input type="text" class="input-text" placeholder="Title" class="input">
-        <input style="margin-top: 20px; font-size:15px; overflow: hidden;" type="text" class="input-text" placeholder="Take a note..." class="input">
+        <mat-card-title type="text" placeholder="Title" class="input">{{note.title}}</mat-card-title>
+        <mat-card-content style="margin-top: 20px; font-size:15px; overflow: hidden;" type="text" placeholder="Take a note..." class="input">{{note.description}} </mat-card-content>
+        <!-- <div></div> -->
         <app-icons></app-icons>
     </mat-card>
 </div>

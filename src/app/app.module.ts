@@ -25,6 +25,8 @@ import {MatCardModule} from '@angular/material/card';
 import { AllNotesComponent } from './component/all-notes/all-notes.component';
 import { NoteDisplayComponent } from './component/note-display/note-display.component';
 import { IconsComponent } from './component/icons/icons.component';
+import { AllArchiveComponent } from './component/all-archive/all-archive.component';
+import { AllTrashNotesComponent } from './component/all-trash-notes/all-trash-notes.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { IconsComponent } from './component/icons/icons.component';
     NoteComponent,
     AllNotesComponent,
     NoteDisplayComponent,
-    IconsComponent
+    IconsComponent,
+    AllArchiveComponent,
+    AllTrashNotesComponent
   ],
   imports: [
     BrowserModule,

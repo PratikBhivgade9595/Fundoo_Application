@@ -38,4 +38,18 @@ export class NoteService {
   
     return this.httpService.getService('/notes/getNotesList', true, header)
   }
+
+  noteGetDelete(reqdata: any) {
+    
+  
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'Authorization': this.token
+       })
+    }
+  
+    return this.httpService.postService('/notes/trashNotes', reqdata, true, header)
+  
+  }
 }

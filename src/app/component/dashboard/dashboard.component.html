@@ -48,7 +48,7 @@
                 <button mat-icon-button (click)="expand1();">
                     <img src="../../../assets/dashboard\lightbulb_FILL0_wght400_GRAD0_opsz48.svg" style="height: 30px;">
                 </button>
-                <a mat-list-item *ngIf="isValid" >Notes</a>
+                <a mat-list-item *ngIf="isValid" routerLink="./allnotes">Notes</a>
             </div>
             <div fxLayoutAlign="start center" fxLayout="row" fxLayoutGap="20px" mat-list-item>
                 <button mat-icon-button (click)="expand2();">
@@ -66,13 +66,13 @@
                 <button mat-icon-button (click)="expand4();">
                     <img src="../../../assets/dashboard\archive_FILL0_wght400_GRAD0_opsz48.svg"  style="height: 30px;">
                 </button>
-                <a mat-list-item *ngIf="isValid">Archive</a>
+                <a mat-list-item *ngIf="isValid" routerLink="./archive">Archive</a>
             </div>       
             <div fxLayoutAlign="start center" fxLayout="row" fxLayoutGap="20px" mat-list-item>
                 <button mat-icon-button (click)="expand5();">
                     <img src="../../../assets/dashboard\delete_FILL0_wght400_GRAD0_opsz48.svg"  style="height: 30px;">
                 </button>
-                <a mat-list-item *ngIf="isValid">Trash</a>
+                <a mat-list-item *ngIf="isValid" routerLink="./trash">Trash</a>
             </div>      
         </mat-nav-list>
     </mat-sidenav>
