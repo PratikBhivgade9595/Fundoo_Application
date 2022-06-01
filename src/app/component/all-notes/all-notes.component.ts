@@ -8,6 +8,7 @@ import { NoteService } from 'src/app/services/noteService/note.service';
 })
 export class AllNotesComponent implements OnInit {
   notesArray: any;
+  
 
   constructor(private note: NoteService) { }
 
@@ -18,8 +19,13 @@ export class AllNotesComponent implements OnInit {
   getAllNote() {
     this.note.getNoteData().subscribe((response: any) => { 
       console.log(response);
-      this.notesArray = response.data.data
+      this.notesArray = response.data.data;
+      this.notesArray.reverse();
+      this.notesArray = this.notesArray.filter((notedata: any) => {
+        return notedata.isDeleted === false && notedata.isArchived == false;
+      })
   });
+  
 }
 
 }

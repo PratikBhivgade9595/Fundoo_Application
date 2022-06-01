@@ -3,9 +3,23 @@
       
 // }
 
+.main {
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    // justify-content: center;
+    // margin-left: 200px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+   
+    
+    
+}
+
 .mat-card {
     width: -10%;
      height: 187px;
+     
  }
 
 .input {
@@ -17,10 +31,14 @@
 
 .div-part1 {
     width: 100%;
-    gap: 10px;
+    // gap: 10px;
     border-radius: 2px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    // display: flex;
+    // flex-direction: row;
+    // flex-wrap: wrap;
+    margin: 20px -30px 0px -30px;
+    // justify-content: center;
+    margin-left: 100px;
+   
 }
      

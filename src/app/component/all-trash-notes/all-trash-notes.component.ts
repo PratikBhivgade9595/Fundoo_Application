@@ -7,7 +7,7 @@ import { NoteService } from 'src/app/services/noteService/note.service';
   styleUrls: ['./all-trash-notes.component.scss']
 })
 export class AllTrashNotesComponent implements OnInit {
-  notesArray: any;
+  notesTrash: any;
 
   constructor(private note: NoteService) { }
 
@@ -15,10 +15,10 @@ export class AllTrashNotesComponent implements OnInit {
     this.getAllTrashNote();
   }
 
-  getAllTrashNote() {
-    this.note.getNoteData().subscribe((response: any) => { 
-      console.log(response);
-      this.notesArray = response.data.data
-  });
-}
+   getAllTrashNote() {
+     this.note.getNoteTrashData().subscribe((response: any) => { 
+       console.log(response);
+       this.notesTrash = response.data.data
+   });
+ }
 }

@@ -7,17 +7,17 @@ import { NoteService } from 'src/app/services/noteService/note.service';
   styleUrls: ['./all-archive.component.scss']
 })
 export class AllArchiveComponent implements OnInit {
-notesArray: any;
+ notesArchive: any;
   constructor(private note: NoteService) { }
 
   ngOnInit(): void {
-    this.getAllArchiveNote();
+     this.getAllArchiveNote();
   }
 
-  getAllArchiveNote() {
-    this.note.getNoteData().subscribe((response: any) => { 
-      console.log(response);
-      this.notesArray = response.data.data
-  });
-}
+   getAllArchiveNote() {
+     this.note.getNoteArchiveData().subscribe((response: any) => { 
+       console.log(response);
+       this.notesArchive = response.data.data
+   });
+ }
 }
