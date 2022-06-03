@@ -35,9 +35,14 @@
         <span>
             <img src="../../../assets/dashboard/apps_FILL0_wght400_GRAD0_opsz48.png" title="Fundoo Apps"style="height: 30px;">
         </span>
-        <span>
-            <img src="../../../assets/dashboard/img2.png" title="Fundoo Account | Pratik Bhivgade" style="height: 30px;">
-        </span>
+        <button mat-button [matMenuTriggerFor]="menu">
+            <img src="../../../assets/dashboard/img2.png" title="Fundoo Account | Pratik Bhivgade" style="height: 30px; margin-top: -5px;">
+            <mat-menu #menu="matMenu">
+                <img src="../../../assets/dashboard/img2.png" style="margin-left: 40px;">
+                <span style="text-align: center; margin-top: 5px;" fxLayoutAlign="space-around center">Pratik Bhivgade</span>
+                <button mat-menu-item fxLayoutAlign="space-around center">LogOut</button>
+            </mat-menu>
+        </button>
     </div>
 </div>
 

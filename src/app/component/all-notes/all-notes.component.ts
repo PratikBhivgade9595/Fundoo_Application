@@ -12,7 +12,7 @@ export class AllNotesComponent implements OnInit {
 
   constructor(private note: NoteService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {         //lifecycle hooks
     this.getAllNote();
   }
 

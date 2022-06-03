@@ -94,4 +94,17 @@ export class NoteService {
     return this.httpService.getService('/notes/getTrashNotesList', true, header)
   }
 
+  noteUpdate(reqdata: any) {
+    console.log("Note updated");
+    
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'Authorization': this.token
+       })
+    }
+  
+    return this.httpService.postService('/notes/updateNotes', reqdata, true, header)
+  
+  }
 }

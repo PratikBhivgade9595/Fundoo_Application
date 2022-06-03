@@ -10,13 +10,16 @@ import { ResetPasswordComponent } from './component/reset-password/reset-passwor
 import { NoteDisplayComponent } from './component/note-display/note-display.component';
 import { AllTrashNotesComponent } from './component/all-trash-notes/all-trash-notes.component';
 import { AllArchiveComponent } from './component/all-archive/all-archive.component';
+import { AuthenticationGuard } from './authentication.guard';
+
 
 const routes: Routes = [
+  {path:'', redirectTo:"/login", pathMatch: 'full'},
   {path:'register', component: RegistrationComponent},
   {path:'login', component: LoginPageComponent},
   {path:'email', component: ForgetEmailComponent},
   {path:'password', component: ResetPasswordComponent},
-  {path:'dashboard', component: DashboardComponent,
+  {path:'dashboard', component: DashboardComponent, canActivate: [AuthenticationGuard],
    children: [
      {path:'', redirectTo:"dashboard/allnotes", pathMatch: 'full'},
      {path:"allnotes", component: AllNotesComponent},

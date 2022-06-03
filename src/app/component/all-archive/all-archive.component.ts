@@ -17,7 +17,8 @@ export class AllArchiveComponent implements OnInit {
    getAllArchiveNote() {
      this.note.getNoteArchiveData().subscribe((response: any) => { 
        console.log(response);
-       this.notesArchive = response.data.data
+       this.notesArchive = response.data.data;
+       this.notesArchive.reverse();
    });
  }
 }

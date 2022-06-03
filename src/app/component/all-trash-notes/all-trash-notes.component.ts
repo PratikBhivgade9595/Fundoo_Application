@@ -18,7 +18,8 @@ export class AllTrashNotesComponent implements OnInit {
    getAllTrashNote() {
      this.note.getNoteTrashData().subscribe((response: any) => { 
        console.log(response);
-       this.notesTrash = response.data.data
+       this.notesTrash = response.data.data;
+       this.notesTrash.reverse();
    });
  }
 }

@@ -27,6 +27,11 @@ import { NoteDisplayComponent } from './component/note-display/note-display.comp
 import { IconsComponent } from './component/icons/icons.component';
 import { AllArchiveComponent } from './component/all-archive/all-archive.component';
 import { AllTrashNotesComponent } from './component/all-trash-notes/all-trash-notes.component';
+import { UpdateNoteComponent } from './component/update-note/update-note.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { AuthguardService } from './authguard.service'; 
+import {FormsModule} from '@angular/forms';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
@@ -41,7 +46,8 @@ import { AllTrashNotesComponent } from './component/all-trash-notes/all-trash-no
     NoteDisplayComponent,
     IconsComponent,
     AllArchiveComponent,
-    AllTrashNotesComponent
+    AllTrashNotesComponent,
+    UpdateNoteComponent
   ],
   imports: [
     BrowserModule,
@@ -59,9 +65,14 @@ import { AllTrashNotesComponent } from './component/all-trash-notes/all-trash-no
     MatIconModule,
     MatToolbarModule,
     MatListModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule,
+    FormsModule,
+    MatGridListModule
   ],
-  providers: [],
+  providers: [
+    AuthguardService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,17 @@
+<!-- <p>update-note works!</p> -->
+<div>
+    <div>
+    <mat-card style="box-sizing: 500px; border-radius: 2px; outline: none; border: none; overflow: hidden;">
+        <div class="title">
+            <input matInput [(ngModel)]="title" placeholder="Title" type="text" style="width: 100%; outline: none;">
+        </div>
+        <div class="description">
+            <input matInput [(ngModel)]="description"placeholder="Take a note..." type="text" style="width: 100%; outline: none;" >
+        </div>
+        <app-icons></app-icons>
+        <div class="button">
+            <button mat-button  mat-dialog-close (click)="close()">close</button>
+        </div>
+    </mat-card>
+    </div>
+</div>

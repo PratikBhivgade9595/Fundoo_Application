@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/userService/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -8,12 +9,15 @@ import { UserService } from 'src/app/services/userService/user.service';
   styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
+  users='1';
   loginForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private user: UserService) { }
+  constructor(private formBuilder: FormBuilder, private user: UserService, private router: Router) { }
 
   ngOnInit(): void {
+    localStorage.setItem('SeesionUser',this.users)  
+
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -36,6 +40,7 @@ export class LoginPageComponent implements OnInit {
       this.user.login(reqdata).subscribe((response: any) => {
         console.log(response);
         localStorage.setItem("token",response.id)
+        this.router.navigateByUrl('/dashboard/allnotes')
       });
     }
 
