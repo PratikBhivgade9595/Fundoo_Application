@@ -12,7 +12,6 @@ import { AllTrashNotesComponent } from './component/all-trash-notes/all-trash-no
 import { AllArchiveComponent } from './component/all-archive/all-archive.component';
 import { AuthenticationGuard } from './authentication.guard';
 
-
 const routes: Routes = [
   {path:'', redirectTo:"/login", pathMatch: 'full'},
   {path:'register', component: RegistrationComponent},

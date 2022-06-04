@@ -40,7 +40,7 @@ export class NoteService {
   }
 
   noteGetDelete(reqdata: any) {
-    
+    console.log(reqdata);
   
     let header = {
       headers:new HttpHeaders({
@@ -54,6 +54,7 @@ export class NoteService {
   }
 
   archiveNote(reqdata: any) {
+    console.log(reqdata);
 
     let header = {
       headers:new HttpHeaders({
@@ -96,7 +97,7 @@ export class NoteService {
 
   noteUpdate(reqdata: any) {
     console.log("Note updated");
-    
+
     let header = {
       headers:new HttpHeaders({
         'Content-type':'application/json',
@@ -105,6 +106,20 @@ export class NoteService {
     }
   
     return this.httpService.postService('/notes/updateNotes', reqdata, true, header)
+  
+  }
+
+  noteColor(reqdata: any) {
+
+    console.log(reqdata);
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'Authorization': this.token
+       })
+    }
+  
+    return this.httpService.postService('/notes/changesColorNotes', reqdata, true, header)
   
   }
 }
