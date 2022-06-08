@@ -1,5 +1,5 @@
 <!-- <p>icons works!</p> -->
-<div fxLayout="row" >
+<div fxLayout="row" *ngIf="icons">
     <button mat-icon-button>
         <img class="icon-img" src="../../../assets/icons/add_alert_FILL0_wght400_GRAD0_opsz48.svg" title="Remind me">
     </button>
@@ -8,22 +8,33 @@
     </button>
     <button mat-icon-button [matMenuTriggerFor]="menus">
         <img class="icon-img" src="../../../assets/icons/palette_FILL0_wght400_GRAD0_opsz48.svg" title="Background option">
-        <mat-menu #menus="matMenu">
-            <div *ngFor="let color of colors" class="colorpallete">
-                <button  mat-menu-item [style.background]="color?.code" (click)="setColor(color.code)"></button>
+        <mat-menu #menus="matMenu" class="mat"> 
+            <div class="colorpallete">
+                <button  *ngFor="let color of colors" class="color"  mat-mini-fab [style.background]="color?.code" (click)="setColor(color.code)"></button>
             </div>
 		</mat-menu>
     </button>
     <button mat-icon-button>
         <img class="icon-img" src="../../../assets/icons/image_FILL0_wght400_GRAD0_opsz48.svg" title="Add image">
     </button>
-    <button mat-icon-button (click)="noteArchive()">
+    <button mat-icon-button  *ngIf="Archive" (click)="noteArchive()">
         <img class="icon-img" src="../../../assets/dashboard/archive_FILL0_wght400_GRAD0_opsz48.svg" title="Archive">
+    </button>
+    <button mat-icon-button *ngIf="UnArchive"  (click)="noteUnArchive()">
+        <img class="icon-img" src="../../../assets/icons\unarchive_FILL0_wght400_GRAD0_opsz48.svg" title="UnArchive">
     </button>
     <button mat-icon-button [matMenuTriggerFor]="menu">
         <img class="icon-img" src="../../../assets/icons/more_vert_FILL0_wght400_GRAD0_opsz48.svg" title="More">
         <mat-menu #menu="matMenu">
 			<button mat-menu-item (click)="noteDelete()">Delete note</button>
 		</mat-menu>
+    </button>
+</div>
+<div *ngIf="trashIcons" >
+    <button mat-icon-button  (click)="deleteForever()">
+        <img class="icon-img" src="../../../assets\icons\delete_forever_FILL0_wght400_GRAD0_opsz48.svg" title="Delete forever">
+    </button>
+    <button mat-icon-button  (click)="restore()">
+        <img class="icon-img" src="../../../assets\icons\restore_from_trash_FILL0_wght400_GRAD0_opsz48.svg" title="Restore">
     </button>
 </div>

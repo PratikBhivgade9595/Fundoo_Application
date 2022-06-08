@@ -122,4 +122,19 @@ export class NoteService {
     return this.httpService.postService('/notes/changesColorNotes', reqdata, true, header)
   
   }
+
+  noteGetDeleteForever(reqdata: any) {
+
+    console.log(reqdata);
+  
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'Authorization': this.token
+       })
+    }
+    console.log("Delete Note Successfully")
+    return this.httpService.postService('/notes/deleteForeverNotes', reqdata, true, header)
+  
+  }
 }

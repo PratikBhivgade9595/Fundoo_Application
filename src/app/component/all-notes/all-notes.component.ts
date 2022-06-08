@@ -28,4 +28,23 @@ export class AllNotesComponent implements OnInit {
   
 }
 
+trash(data: any) {
+  console.log("refresh", data);
+  this.getAllNote();
+}
+
+archive(data: any) {
+  console.log("refresh", data);
+  this.getAllNote();
+}
+
+updateNote(data: any) {
+   console.log("refresh", data);
+   this.getAllNote();
+}
+
+// commonRefresh(data: any) {
+//   console.log("refresh", data);
+//    this.getAllNote();
+// }
 }

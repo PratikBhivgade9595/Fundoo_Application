@@ -1,7 +1,9 @@
 <!-- <p>all-notes works!</p> -->
-<div style="margin-top: -60px;">
-<app-note></app-note>
-</div>
-<div style="margin-top: 100px;" class="display">
-<app-note-display [NoteArray]="notesArray"></app-note-display>
+<div class="main" fxlayout="coloumn" fxlayoutAlign="center center">
+    <div style="margin-top: -60px;" class="display">
+        <app-note (noteToRefresh)=" getAllNote()"></app-note>
+    </div>
+    <div style="margin-top: 100px;" class="display">
+        <app-note-display [NoteArray]="notesArray" (noteToRefresh)=" getAllNote()" (trashNoteToRefresh)="trash($event)" (archiveNoteAndRefresh)="archive($event)" (updateNoteToRefresh)="updateNote($event)"  ></app-note-display>
+    </div>
 </div>

@@ -1,50 +1,52 @@
-<div class="Container">
-    <div class="fundoo">
-        <span class="textsty" style="color:#4169e1">F</span>
-        <span class="textsty" style="color:#b22222">u</span>
-        <span class="textsty" style="color: #ff8c00">n</span>
-        <span class="textsty" style="color:#4169e1">d</span>
-        <span class="textsty" style="color: green">o</span>
-        <span class="textsty" style="color: #b22222">o</span>
-    </div>
-    <div class="sign">
-        <p>Sign in</p>
-    </div>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <div class="use-text">use your google Account</div>
-        <div class="label">
-            <p>
-                <mat-form-field appearance="outline" style="width: 400px">
-                    <mat-label>Email</mat-label>
-                    <!-- <input matInput placeholder="Placeholder"> -->
-                    <input matInput placeholder="" formControlName="email" />
-                    <mat-error>email id is required</mat-error>
-                </mat-form-field>
-            </p>
+<div fxLayoutAlign="space-around center" fxLayoutAlign.xs="space-around center" fxLayout.xs="wrap">
+    <div class="Container" >
+        <div class="fundoo">
+            <span class="textsty" style="color:#4169e1">F</span>
+            <span class="textsty" style="color:#b22222">u</span>
+            <span class="textsty" style="color: #ff8c00">n</span>
+            <span class="textsty" style="color:#4169e1">d</span>
+            <span class="textsty" style="color: green">o</span>
+            <span class="textsty" style="color: #b22222">o</span>
         </div>
-        <div class="label-text">Forget email?</div>
-        <div class="label">
-            <p>
-                <mat-form-field appearance="outline" style="width: 400px">
-                    <mat-label>Password</mat-label>
-                    <!-- <input matInput placeholder="Placeholder"> -->
-                    <input matInput placeholder="" formControlName="password" />
-                    <mat-error>password is required</mat-error>
-                </mat-form-field>
-            </p>
+        <div class="sign">
+            <p>Sign in</p>
         </div>
-        <div class="label-text">Forget Password?</div>
-        <div class="text1">
-            <p>Not your computer? Use Guest mode to sign in privately</p>
-        </div>
-        <div class="text2">Learn More</div>
-        <div class="Bottom-part">
-            <div class="text3">
-                <p>Create Account</p>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="use-text">use your google Account</div>
+            <div class="label">
+                <p>
+                    <mat-form-field appearance="outline" style="width: 400px">
+                        <mat-label>Email</mat-label>
+                        <!-- <input matInput placeholder="Placeholder"> -->
+                        <input matInput placeholder="" formControlName="email" />
+                        <mat-error>email id is required</mat-error>
+                    </mat-form-field>
+                </p>
             </div>
-            <div>
-                <button mat-raised-button Next class="btn" (click)="onSubmit()"><b>Next</b></button>
+            <div class="label-text">Forget email?</div>
+            <div class="label">
+                <p>
+                    <mat-form-field appearance="outline" style="width: 400px">
+                        <mat-label>Password</mat-label>
+                        <!-- <input matInput placeholder="Placeholder"> -->
+                        <input matInput placeholder="" formControlName="password" />
+                        <mat-error>password is required</mat-error>
+                    </mat-form-field>
+                </p>
             </div>
-        </div>
-    </form>
+            <div class="label-text">Forget Password?</div>
+            <div class="text1">
+                <p>Not your computer? Use Guest mode to sign in privately</p>
+            </div>
+            <div class="text2">Learn More</div>
+            <div class="Bottom-part">
+                <div class="text3">
+                    <p>Create Account</p>
+                </div>
+                <div>
+                    <button mat-raised-button Next class="btn" (click)="onSubmit()"><b>Next</b></button>
+                </div>
+            </div>
+        </form>
+    </div>
 </div>

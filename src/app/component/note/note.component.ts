@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,EventEmitter,Output } from '@angular/core';
 import { throwMatDuplicatedDrawerError } from '@angular/material/sidenav';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NoteService } from 'src/app/services/noteService/note.service';
@@ -11,6 +11,7 @@ import { NoteService } from 'src/app/services/noteService/note.service';
 export class NoteComponent implements OnInit {
 noteForm!: FormGroup;
 submitted = false;
+@Output() noteToRefresh  = new EventEmitter<any>();
 
   constructor(private formBuilder: FormBuilder, private note: NoteService) { }
 
@@ -37,7 +38,10 @@ submitted = false;
      }  
       this.note.noteData(reqdata).subscribe((response: any) => {
         console.log(response);
-      }); 
+        
+      
+      });
+         
     }
 
   }
@@ -51,7 +55,7 @@ submitted = false;
   close() {
     this.visible = true;
     this.onSubmit() 
-    
+    this.noteToRefresh.emit()
   }
 
   

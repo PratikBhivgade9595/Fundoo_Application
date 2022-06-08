@@ -2,7 +2,7 @@
     display: flex;
     gap: 110px;
     opacity: 0.8;
-
+    //width: 100%;
 }
 
 .menu-button {
@@ -32,5 +32,38 @@
 .search {
     width: 500px;
     height: 30px;
-    
+    border: none;
+    // opacity: 0.1;
+}
+
+
+@media (min-width:180px) and (max-width:790Px){
+.search {
+    visibility: hidden;
+} 
+.search-mat {
+    visibility: hidden;
+}
+.header {
+    // height: 60px;
+    border: black;
+    border: 5px;
+    width: -400px;
+}
+
+.header-content1 {
+    margin-left: -700px;
+}
+
+.header-content2 {
+    margin-left: -60px;
+}
+
+// .sidenav-content{
+//    // margin-top: 100px;
+//      width: 80%;
+// }
+
+
+
 }

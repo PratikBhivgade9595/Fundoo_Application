@@ -22,4 +22,9 @@ export class AllTrashNotesComponent implements OnInit {
        this.notesTrash.reverse();
    });
  }
+
+ Refresh(data: any) {
+  this. getAllTrashNote();
+ }
 }
+

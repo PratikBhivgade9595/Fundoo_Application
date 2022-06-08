@@ -1,9 +1,10 @@
-<div class="header">
+<div class="header" [class.example-is-mobile]="mobileQuery.matches">
     <div fxLayoutAlign="space-around center" class="header-content">
-        <button  class="menu-button" (click)="sidenav.toggle();">
-            <img src="../../../assets\dashboard\menu_FILL0_wght400_GRAD0_opsz48.png" title="Main menu" style="height: 30px; opacity: 1;">
+        <button class="menu-button" (click)="sidenav.toggle();">
+            <img src="../../../assets\dashboard\menu_FILL0_wght400_GRAD0_opsz48.png" title="Main menu"
+                style="height: 30px; opacity: 1;">
         </button>
-       <!-- </mat-toolbar> -->
+        <!-- </mat-toolbar> -->
         <span>
             <img src="../../../assets/dashboard/img1.png" title="Fundoo" style="height: 30px;">
         </span>
@@ -17,38 +18,49 @@
             <span class="textsty" style="color: #b22222">o</span>
         </div>
     </div>
-    <div fxLayoutAlign="space-around center">
-        <input type="search" class="search" placeholder="Search" style="height: 30px;">
+    <div fxLayoutAlign="space-around center" style="padding: 1px;" class="search-mat">
+        <mat-card fxLayout="row" style="height: 45px; margin-left: -30px;" >
+            <img src="../../../assets\dashboard\search_FILL0_wght400_GRAD0_opsz48.svg"
+                style="width: 23px ;height: 23px; margin-top: -3px">
+            <input type="search" class="search" style="height: 30px; margin-top: -8px; overflow: hidden"     (keyup)="searchTitle($event)">
+        </mat-card>
     </div>
     <div fxLayoutAlign="space-around center" class="header-content1">
         <span>
-            <img src="../../../assets/dashboard/refresh_FILL0_wght400_GRAD0_opsz48.png" title="Refresh" style="height: 30px;">
+            <img src="../../../assets/dashboard/refresh_FILL0_wght400_GRAD0_opsz48.png" title="Refresh"
+                style="height: 30px;">
         </span>
         <span>
-            <img src="../../../assets\dashboard\view_agenda_FILL0_wght400_GRAD0_opsz48.svg" title="List view" style="height: 30px;">
+            <img src="../../../assets\dashboard\view_agenda_FILL0_wght400_GRAD0_opsz48.svg" title="List view"
+                style="height: 30px;">
         </span>
         <span>
-            <img src="../../../assets/dashboard/settings_FILL0_wght400_GRAD0_opsz48.png" title="Setting" style="height: 30px;">
+            <img src="../../../assets/dashboard/settings_FILL0_wght400_GRAD0_opsz48.png" title="Setting"
+                style="height: 30px;">
         </span>
     </div>
-    <div fxLayoutAlign="space-around center" class="header-content2" >
+    <div fxLayoutAlign="space-around center" class="header-content2">
         <span>
-            <img src="../../../assets/dashboard/apps_FILL0_wght400_GRAD0_opsz48.png" title="Fundoo Apps"style="height: 30px;">
+            <img src="../../../assets/dashboard/apps_FILL0_wght400_GRAD0_opsz48.png" title="Fundoo Apps"
+                style="height: 30px;">
         </span>
         <button mat-button [matMenuTriggerFor]="menu">
-            <img src="../../../assets/dashboard/img2.png" title="Fundoo Account | Pratik Bhivgade" style="height: 30px; margin-top: -5px;">
+            <img src="../../../assets/dashboard/img2.png" title="Fundoo Account | Pratik Bhivgade"
+                style="height: 30px; margin-top: -5px;">
             <mat-menu #menu="matMenu" class="logout-display">
                 <img src="../../../assets/dashboard/img2.png" style="margin-left: 40px;">
-                <span style="text-align: center; margin-top: 5px;" fxLayoutAlign="space-around center">Pratik Bhivgade</span>
+                <span style="text-align: center; margin-top: 5px;" fxLayoutAlign="space-around center">Pratik
+                    Bhivgade</span>
                 <button mat-menu-item fxLayoutAlign="space-around center" (click)="logout()">LogOut</button>
             </mat-menu>
         </button>
     </div>
 </div>
 
-<mat-sidenav-container>
-    <mat-sidenav #sidenav mode="side">
-        <mat-nav-list >
+<mat-sidenav-container [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #sidenav mode="side" [mode]="mobileQuery.matches ? 'over' : 'side'"
+        [fixedInViewport]="mobileQuery.matches">
+        <mat-nav-list>
             <div fxLayoutAlign="start center" fxLayout="row" fxLayoutGap="20px" mat-list-item>
                 <button mat-icon-button (click)="expand1();">
                     <img src="../../../assets/dashboard\lightbulb_FILL0_wght400_GRAD0_opsz48.svg" style="height: 30px;">
@@ -57,34 +69,37 @@
             </div>
             <div fxLayoutAlign="start center" fxLayout="row" fxLayoutGap="20px" mat-list-item>
                 <button mat-icon-button (click)="expand2();">
-                    <img src="../../../assets/dashboard\notifications_FILL0_wght400_GRAD0_opsz48.svg"  style="height: 30px;">
+                    <img src="../../../assets/dashboard\notifications_FILL0_wght400_GRAD0_opsz48.svg"
+                        style="height: 30px;">
                 </button>
                 <a mat-list-item *ngIf="isValid">Reminders</a>
-            </div>       
+            </div>
             <div fxLayoutAlign="start center" fxLayout="row" fxLayoutGap="20px" mat-list-item>
                 <button mat-icon-button (click)="expand3();">
-                    <img src="../../../assets/dashboard\edit_FILL0_wght400_GRAD0_opsz48.svg"  style="height: 30px;">
+                    <img src="../../../assets/dashboard\edit_FILL0_wght400_GRAD0_opsz48.svg" style="height: 30px;">
                 </button>
                 <a mat-list-item *ngIf="isValid">Edit Labels</a>
-            </div>   
+            </div>
             <div fxLayoutAlign="start center" fxLayout="row" fxLayoutGap="20px" mat-list-item>
                 <button mat-icon-button (click)="expand4();">
-                    <img src="../../../assets/dashboard\archive_FILL0_wght400_GRAD0_opsz48.svg"  style="height: 30px;">
+                    <img src="../../../assets/dashboard\archive_FILL0_wght400_GRAD0_opsz48.svg" style="height: 30px;">
                 </button>
                 <a mat-list-item *ngIf="isValid" routerLink="./archive">Archive</a>
-            </div>       
+            </div>
             <div fxLayoutAlign="start center" fxLayout="row" fxLayoutGap="20px" mat-list-item>
                 <button mat-icon-button (click)="expand5();">
-                    <img src="../../../assets/dashboard\delete_FILL0_wght400_GRAD0_opsz48.svg"  style="height: 30px;">
+                    <img src="../../../assets/dashboard\delete_FILL0_wght400_GRAD0_opsz48.svg" style="height: 30px;">
                 </button>
                 <a mat-list-item *ngIf="isValid" routerLink="./trash">Trash</a>
-            </div>      
+            </div>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <div style="height: 88vh;" ><router-outlet></router-outlet></div>
+        <div class="sidenav-content"style="height: 88vh;" >
+            <router-outlet></router-outlet>
+        </div>
     </mat-sidenav-content>
 </mat-sidenav-container>
-
-
+<!-- style="height: 88vh;" -->
+<!-- fxFlex="column" fxLayout="column wrap" flex=1; -->
 <!-- <app-note></app-note> -->

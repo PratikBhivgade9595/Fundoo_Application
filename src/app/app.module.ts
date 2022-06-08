@@ -32,6 +32,8 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { AuthguardService } from './authguard.service'; 
 import {FormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { FilterPipe } from './Pipes/filter.pipe';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -47,7 +49,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     IconsComponent,
     AllArchiveComponent,
     AllTrashNotesComponent,
-    UpdateNoteComponent
+    UpdateNoteComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -68,7 +71,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     MatCardModule,
     MatDialogModule,
     FormsModule,
-    MatGridListModule
+    MatGridListModule,
+    MatSnackBarModule
   ],
   providers: [
     AuthguardService

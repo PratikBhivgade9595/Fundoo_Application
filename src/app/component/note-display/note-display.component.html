@@ -1,6 +1,6 @@
 <!-- <p>note-display works!</p> -->
 <div class="main">
-    <div *ngFor="let note of NoteArray" class="div-part1">
+    <div *ngFor="let note of NoteArray | filter: searchWord" class="div-part1">
         <mat-card class="mat-card" fxLayout="column" [style.background]="note.color">
             <mat-card-title type="text" [style.background]="note.color" placeholder="Title" class="input" (click)="openDialog(note)">{{note.title}}
             </mat-card-title>
@@ -8,7 +8,8 @@
                 placeholder="Take a note..." class="input" (click)="openDialog(note)">{{note.description}}
             </mat-card-content>
             <!-- <div></div> -->
-            <app-icons [noteCard]="note"></app-icons>
+            <app-icons [noteCard]="note" (trashNoteToRefresh)="trash($event)" (archiveNoteAndRefresh)="archive($event)" (commonToRefresh)="refreshCommon($event)"></app-icons>
         </mat-card>
     </div>
 </div>
+<!-- | filter:filterString -->

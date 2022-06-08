@@ -1,4 +1,4 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, Inject, OnInit,EventEmitter,Output} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { NoteService } from 'src/app/services/noteService/note.service';
 
@@ -12,6 +12,7 @@ export class UpdateNoteComponent implements OnInit {
 title: any;
 description: any;
 id: any;
+// @Output()updateNoteToRefresh = new EventEmitter<any>();
 
   constructor(public dialogRef: MatDialogRef<UpdateNoteComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any, private note: NoteService) {
@@ -34,6 +35,7 @@ id: any;
     }
     this.note.noteUpdate(reqdata).subscribe((response: any) => {
      console.log('Note Get Update', response); 
+      // this.updateNoteToRefresh.emit(response)
    })
   }
 }

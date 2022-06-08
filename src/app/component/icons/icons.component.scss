@@ -3,7 +3,33 @@
     margin-top: 55px;
 }
 
-.colorpallete {
-    display: flex;
-    direction: column;
+
+
+// ::ng-deep.mat-menu-panel {
+//     max-width: none !important;
+// }
+
+ .color:hover{
+     outline-style:solid;
+     outline-width: 1px;
+     outline-color: black;  
+     
 }
+
+
+.colorpallete {
+    // margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    max-width: 189px;
+    margin-left: 5px;
+    padding: 1px;
+    justify-content: space-around center;
+    width: 200px;
+//     margin-left: -300px;
+//     margin-right: 300px;
+ }
+
+//  .mat {
+     
+//  }

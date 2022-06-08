@@ -21,4 +21,8 @@ export class AllArchiveComponent implements OnInit {
        this.notesArchive.reverse();
    });
  }
+ 
+ Refresh(data: any) {
+  this.getAllArchiveNote();
+ }
 }

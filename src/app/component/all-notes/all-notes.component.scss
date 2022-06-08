@@ -1,4 +1,21 @@
-// .display {
-//     //  gap: -50px; 
+.display {
+     width: 90%;
+     height: 90%;
     
+}
+
+.main {
+     //height: 100%;
+     //width: 100%;
+     min-height: 90vh;
+    width: 100%;
+}
+
+// ::ng-deep.main {
+//     height: 100%;
+//     width: 100%;
 // }
+
+@media (min-width:360px) {
+   
+}

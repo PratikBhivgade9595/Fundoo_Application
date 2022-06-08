@@ -1,12 +1,12 @@
 <!-- <p>update-note works!</p> -->
 <div>
     <div>
-    <mat-card style="box-sizing: 500px; border-radius: 2px;  overflow: hidden;">
+    <mat-card style="box-sizing: 500px; border-radius: 2px;  overflow: hidden;" [style.background]="data.color">
         <div>
-            <input class="title" matInput [(ngModel)]="title" placeholder="Title" type="text" style="width: 100%;">
+            <input class="title" [style.background]="data.color" matInput [(ngModel)]="title" placeholder="Title" type="text" style="width: 100%;">
         </div>
         <div>
-            <input class="description" matInput [(ngModel)]="description"placeholder="Take a note..." type="text" style="width: 100%;">
+            <input class="description" [style.background]="data.color" matInput [(ngModel)]="description"placeholder="Take a note..." type="text" style="width: 100%;">
         </div>
         <app-icons></app-icons>
         <div class="button">
