@@ -74,11 +74,17 @@
                 </button>
                 <a mat-list-item *ngIf="isValid">Reminders</a>
             </div>
+            <div fxLayoutAlign="start center" fxLayout="row" fxLayoutGap="20px" mat-list-item  *ngFor="let noteLabel of labelList">
+                <button mat-icon-button (click)="expand3();">
+                    <img src="../../../assets\labels\label_FILL0_wght400_GRAD0_opsz48.svg" style="height: 30px;">
+                </button>
+                <a mat-list-item >{{noteLabel.label}}</a>
+            </div>
             <div fxLayoutAlign="start center" fxLayout="row" fxLayoutGap="20px" mat-list-item>
                 <button mat-icon-button (click)="expand3();">
                     <img src="../../../assets/dashboard\edit_FILL0_wght400_GRAD0_opsz48.svg" style="height: 30px;">
                 </button>
-                <a mat-list-item *ngIf="isValid">Edit Labels</a>
+                <a mat-list-item *ngIf="isValid" (click)="openDialog()">Edit Labels</a>
             </div>
             <div fxLayoutAlign="start center" fxLayout="row" fxLayoutGap="20px" mat-list-item>
                 <button mat-icon-button (click)="expand4();">

@@ -1,0 +1,25 @@
+<!-- <p>label works!</p> -->
+<div >
+    <h2 style="margin-top: -10px;">Edit Labels</h2>
+    <div fxLayout="row" fxLayoutAlign="space-around center" >
+        <img src="../../../assets\labels\close_FILL0_wght400_GRAD0_opsz48.svg" style="width: 20px;" *ngIf="nClose" (click)="close()">
+        <div style="border: none;">
+        <textarea  matinput placeholder="create new label" [(ngModel)]= "label" (click)="visible()" ></textarea>
+        </div>
+        <img src="../../../assets\labels\done_FILL0_wght400_GRAD0_opsz48.svg" *ngIf="nClose" (click)="Done()" style="width: 20px;">
+    </div>
+    <div  fxLayout="row" fxLayoutAlign="space-around center" style="margin-top: 10px;" *ngFor="let noteLabel of labelList">
+        <img *ngIf="img3" src="../../../assets\labels\label_FILL0_wght400_GRAD0_opsz48.svg" style="width: 20px;">
+        <img *ngIf="img4"src="../../../assets\dashboard\delete_FILL0_wght400_GRAD0_opsz48.svg" style="width: 20px;">
+        <div>
+            <textarea class="text" (click)="visible1()">{{noteLabel.label}}</textarea>
+        </div>
+        <img  *ngIf="img1" src="../../../assets\dashboard\edit_FILL0_wght400_GRAD0_opsz48.svg" style="width: 20px;">
+        <img *ngIf="img2" src="../../../assets\labels\done_FILL0_wght400_GRAD0_opsz48.svg" style="width: 20px;">
+    </div>
+    <div style="text-align: right; margin-top: 10px;">
+        <button mat-button (click)= "close1()">
+            Done
+        </button>
+    </div>
+</div>

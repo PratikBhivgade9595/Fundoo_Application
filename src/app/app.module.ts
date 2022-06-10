@@ -34,6 +34,7 @@ import {FormsModule} from '@angular/forms';
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FilterPipe } from './Pipes/filter.pipe';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { LabelComponent } from './component/label/label.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     AllArchiveComponent,
     AllTrashNotesComponent,
     UpdateNoteComponent,
-    FilterPipe
+    FilterPipe,
+    LabelComponent
   ],
   imports: [
     BrowserModule,

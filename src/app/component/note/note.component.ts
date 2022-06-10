@@ -11,6 +11,13 @@ import { NoteService } from 'src/app/services/noteService/note.service';
 export class NoteComponent implements OnInit {
 noteForm!: FormGroup;
 submitted = false;
+// formControlName: any;
+// input : any;
+// input2: any;
+// title: any;
+// description: any;
+input: any;
+
 @Output() noteToRefresh  = new EventEmitter<any>();
 
   constructor(private formBuilder: FormBuilder, private note: NoteService) { }
@@ -56,6 +63,7 @@ submitted = false;
     this.visible = true;
     this.onSubmit() 
     this.noteToRefresh.emit()
+    // this.formControlName= ' ';
   }
 
   

@@ -40,6 +40,7 @@ export class LoginPageComponent implements OnInit {
       this.user.login(reqdata).subscribe((response: any) => {
         console.log(response);
         localStorage.setItem("token",response.id)
+        localStorage.setItem('userId',response.userId)
         this.router.navigateByUrl('/dashboard/allnotes')
       });
     }

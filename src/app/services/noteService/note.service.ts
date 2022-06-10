@@ -137,4 +137,35 @@ export class NoteService {
     return this.httpService.postService('/notes/deleteForeverNotes', reqdata, true, header)
   
   }
+
+  addLabel(reqdata: any) {
+    this.token=localStorage.getItem("token")
+    console.log(reqdata);
+  
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'Authorization': this.token
+       })
+    }
+    console.log("Add label successfully")
+    return this.httpService.postService('/noteLabels', reqdata, true, header)
+  
+  }
+
+  getLabelData() {
+    console.log(" Get Label call");
+  
+    
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'Authorization': this.token
+       })
+    }
+  
+    return this.httpService.getService('/noteLabels/getNoteLabelList', true, header)
+  }
+
+
 }
