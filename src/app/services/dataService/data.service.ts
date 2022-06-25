@@ -8,7 +8,7 @@ export class DataService {
  
   constructor() { }
 
-  private messageSource = new BehaviorSubject({ type:'',data:[]});
+  private messageSource = new BehaviorSubject({ type:'',data:[]}); //current value
   currentData= this.messageSource.asObservable();
 
   changeDataMessage(message: any) {

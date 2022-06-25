@@ -41,9 +41,9 @@ export class NoteDisplayComponent implements OnInit {
   //   this.subscription.unsubscribe();
   // }
 
-  newMessage() {
-    this.data.changeDataMessage("Hello from Sibling")
-  }
+  // newMessage() {
+  //   this.data.changeDataMessage("Hello from Sibling")
+  // }
 
 
   openDialog(noteCard:any): void {  //dialog box

@@ -24,8 +24,8 @@ export class DashboardComponent implements OnInit {
 
   // subscription: Subscription;
 
-  constructor(private router: Router, media: MediaMatcher, private data: DataService, public dialog: MatDialog, private note: NoteService) {
-    this.mobileQuery = media.matchMedia('(max-width: 600px)');
+  constructor(private router: Router, private data: DataService, public dialog: MatDialog, private note: NoteService) {
+    
   }
 
   ngOnInit(): void {
@@ -71,14 +71,14 @@ export class DashboardComponent implements OnInit {
   //   this.message
   // }
 
-  mobileQuery: MediaQueryList;
-  fillerNav: string[] = [
-    'Notes',
-    'Reminders',
-    'Edit Labels',
-    'Archive',
-    'Trash',
-  ];
+  // mobileQuery: MediaQueryList;
+  // fillerNav: string[] = [
+  //   'Notes',
+  //   'Reminders',
+  //   'Edit Labels',
+  //   'Archive',
+  //   'Trash',
+  // ];
 
   isValid: boolean = false;
 

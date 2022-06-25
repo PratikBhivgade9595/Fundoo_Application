@@ -25,7 +25,7 @@ export class IconsComponent implements OnInit {
   ngOnInit(): void {
     console.log(this.noteCard)
     let Component = this.activeRoute.snapshot.component;
-    if (Component == AllArchiveComponent) {
+    if (Component == AllArchiveComponent) {  // we do to change icons.
       this.UnArchive = true;
       this.Archive = false;
       console.log(this.UnArchive);

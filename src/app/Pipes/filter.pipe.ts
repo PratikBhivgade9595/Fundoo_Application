@@ -13,7 +13,7 @@ export class FilterPipe implements PipeTransform {
       args=args.toLocaleLowerCase();
     }
    
-    return value.filter((note:any) =>{
+    return value.filter((note:any) =>{  //array from note-display.
       return note.title.toLocaleLowerCase().includes(args) | note.description.toLocaleLowerCase().includes(args);
      
     })

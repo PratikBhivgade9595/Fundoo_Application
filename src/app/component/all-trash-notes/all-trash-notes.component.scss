@@ -1,0 +1,9 @@
+.trash{
+    margin-left: -20px;
+}
+
+@media (max-width: 400px) {
+    .trash{
+        margin-left: -60px;
+    }
+}

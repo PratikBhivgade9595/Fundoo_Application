@@ -1,28 +1,30 @@
-<div class="Container">
-    <div class="fundoo">
-        <span class="textsty" style="color:#4169e1">F</span>
-        <span class="textsty" style="color:#b22222">u</span>
-        <span class="textsty" style="color: #ff8c00">n</span>
-        <span class="textsty" style="color:#4169e1">d</span>
-        <span class="textsty" style="color: green">o</span>
-        <span class="textsty" style="color: #b22222">o</span>
-    </div>
-    <div class="text">
-        <p>Find your Email</p>
-    </div>
-    <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
-        <div class="label">
-            <p>
-                <mat-form-field appearance="outline" style="width: 400px">
-                    <mat-label>Email</mat-label>
-                    <!-- <input matInput placeholder="Placeholder"> -->
-                    <input matInput placeholder="Placeholder" formControlName="email" />
-                    <mat-error>email id is required</mat-error>
-                </mat-form-field>
-            </p>
+<div fxLayoutAlign="space-around center" fxLayoutAlign.xs="space-around center" fxLayout.xs="wrap" class="main">
+    <div class="Container" fxLayout="column">
+        <div class="fundoo">
+            <span class="textsty" style="color:#4169e1">F</span>
+            <span class="textsty" style="color:#b22222">u</span>
+            <span class="textsty" style="color: #ff8c00">n</span>
+            <span class="textsty" style="color:#4169e1">d</span>
+            <span class="textsty" style="color: green">o</span>
+            <span class="textsty" style="color: #b22222">o</span>
         </div>
-        <div class="button">
-            <button mat-raised-button Next class="btn" (click)="onSubmit()"><b>Next</b></button>
+        <div class="text">
+            <p>Find your Email</p>
         </div>
-    </form>
+        <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+            <div class="label">
+                <p>
+                    <mat-form-field appearance="outline" style="" class="email">
+                        <mat-label>Email</mat-label>
+                        <!-- <input matInput placeholder="Placeholder"> -->
+                        <input matInput placeholder="Placeholder" formControlName="email" />
+                        <mat-error>email id is required</mat-error>
+                    </mat-form-field>
+                </p>
+            </div>
+            <div class="button">
+                <button mat-raised-button Next class="btn" (click)="onSubmit()"><b>Next</b></button>
+            </div>
+        </form>
+    </div>
 </div>

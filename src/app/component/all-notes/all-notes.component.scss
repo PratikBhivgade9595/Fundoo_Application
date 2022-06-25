@@ -7,8 +7,9 @@
 .main {
      //height: 100%;
      //width: 100%;
-     min-height: 90vh;
+     // min-height: 90vh;
     width: 100%;
+    margin-left: -40px;
 }
 
 // ::ng-deep.main {
@@ -16,6 +17,21 @@
 //     width: 100%;
 // }
 
-@media (min-width:360px) {
+// @media (min-width:360px) {
    
+// }
+
+@media (max-width: 400px) {
+     main {
+         width: none;
+         margin-left: none;
+     //     display: flex;
+     //     flex-direction: column;
+     }
+     .display {
+          width: none;
+          height: none;
+          display: flex;
+          flex-direction: column;
+     }
 }

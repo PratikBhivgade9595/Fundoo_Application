@@ -9,6 +9,7 @@ import { NoteService } from 'src/app/services/noteService/note.service';
 })
 export class LabelComponent implements OnInit {
 nClose = true;
+labelUpdate: any;
 id: any;
 input : any;
 img1 = true;
@@ -54,7 +55,7 @@ label: any;
     let reqdata = {
       label: this.label,
       isDeleted: false,
-      userId: localStorage.getItem('userId'),   //payload
+      userId: localStorage.getItem('userId'),   //payload localStorage.getItem('userId')
       
     }
     this.note.addLabel(reqdata).subscribe((response: any) => {
@@ -73,5 +74,38 @@ label: any;
   close1() {
 
   }
+
+  delete(id: any) {
+    let reqdata = {
+      // label: this.label,
+      id: id,   
+      
+    }
+    this.note.deleteLabel(reqdata).subscribe((response: any) => {
+      console.log('delete Label', response);
+     
+    });
+  }
+
+//   update(label: any) {
+//     console.log(label)
+//     let reqdata = {
+//       label: label,
+//       isDeleted: false,
+//       id: label.id,
+//       userId: label.userId,   
+
+      
+//     }
+//     this.note.updateLabel(reqdata).subscribe((response: any) => {
+//       console.log('update Label', response);
+     
+//     });
+//  }
+
+ 
 }
-// localStorage.getItem('userId'), 
+// localStorage.getItem('userId'),  label: this.updatedLabel,
+        // isDeleted: false,
+        // id:label.id,
+        // userId: label.userId,

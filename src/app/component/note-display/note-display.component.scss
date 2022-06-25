@@ -4,7 +4,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     
-    margin-left: 130px;
+    margin-left: 110px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     column-gap: 20px;
@@ -33,4 +33,20 @@
     width:fit-content;
     margin: 3%;
 }
-     
+  
+// @media (min-width:180px) and (max-width:790Px){
+//    .main {
+//        display: flex;
+//        flex-direction: column;
+//    } 
+// }
+
+@media (max-width: 400px) {
+    .main {
+        display: flex;
+        flex-direction: column;
+        //margin-top: -150px;
+        //justify-content: space-around center;
+        
+    } 
+}

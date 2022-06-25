@@ -91,3 +91,27 @@
 .username {
     width: 420px;
 }
+
+@media (max-width: 400px) {
+    .container {
+        border: 1px solid lightgrey;
+        display: flex;
+        width: 600px;
+        height: 600px;
+        margin-left: 130px;
+        // margin-top: 5%;
+        border-radius: 10px;
+        margin-top: 300px; 
+        opacity: 0.8;   
+    }
+    .img {
+       visibility: hidden;
+    }
+    .text-img {
+        visibility: hidden;
+    }
+
+    .left-side {
+        margin-left: 50px;
+    }
+}

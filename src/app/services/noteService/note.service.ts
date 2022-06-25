@@ -167,5 +167,30 @@ export class NoteService {
     return this.httpService.getService('/noteLabels/getNoteLabelList', true, header)
   }
 
+  deleteLabel(reqdata: any) {
+    console.log(reqdata);
+  
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'Authorization': this.token
+       })
+    }
+    console.log("Delete label Successfully")
+    return this.httpService.deleteService('/noteLabels/'+reqdata.id+'/deleteNoteLabel', reqdata, true)
+  
+  }
 
+  updateLabel(reqdata: any) {
+    console.log(reqdata);
+  
+    let header = {
+      headers:new HttpHeaders({
+        'Content-type':'application/json',
+        'Authorization': this.token
+       })
+    }
+    console.log("update label Successfully")
+    return this.httpService.postService('/noteLabels/'+reqdata.userId+'/updateNoteLabel', reqdata, true, header)
+  }
 }
